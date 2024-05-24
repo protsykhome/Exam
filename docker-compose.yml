@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      APP_ENV: dev
+      DATABASE_URL: mysql://company_user:secure_password123@database:3306/company_db
+      JWT_PASSPHRASE: 1311
+    depends_on:
+      - database
+    volumes:
+      - .:/var/www/html
+    networks:
+      - app-network
+
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 1311
+      MYSQL_DATABASE: company_db
+      MYSQL_USER: company_user
+      MYSQL_PASSWORD: secure_password123
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:

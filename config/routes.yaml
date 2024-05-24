@@ -1,0 +1,84 @@
+api_register:
+  path: '/api/register'
+  controller: 'App\Controller\RegistrationController::register'
+  methods: ['POST']
+
+api_login:
+  path: '/api/login'
+  controller: 'App\Controller\LoginController::login'
+  methods: ['POST']
+
+api_company_list:
+  path: '/api/companies'
+  controller: 'App\Controller\CompanyController::index'
+  methods: ['GET']
+
+api_company_show:
+  path: '/api/companies/{id}'
+  controller: 'App\Controller\CompanyController::show'
+  methods: ['GET']
+
+api_company_create:
+  path: '/api/companies'
+  controller: 'App\Controller\CompanyController::create'
+  methods: ['POST']
+
+api_company_update:
+  path: '/api/companies/{id}'
+  controller: 'App\Controller\CompanyController::update'
+  methods: ['PUT']
+
+api_company_delete:
+  path: '/api/companies/{id}'
+  controller: 'App\Controller\CompanyController::delete'
+  methods: ['DELETE']
+
+api_employee_list:
+  path: '/api/employees'
+  controller: 'App\Controller\EmployeeController::index'
+  methods: ['GET']
+
+api_employee_show:
+  path: '/api/employees/{id}'
+  controller: 'App\Controller\EmployeeController::show'
+  methods: ['GET']
+
+api_employee_create:
+  path: '/api/employees'
+  controller: 'App\Controller\EmployeeController::create'
+  methods: ['POST']
+
+api_employee_update:
+  path: '/api/employees/{id}'
+  controller: 'App\Controller\EmployeeController::update'
+  methods: ['PUT']
+
+api_employee_delete:
+  path: '/api/employees/{id}'
+  controller: 'App\Controller\EmployeeController::delete'
+  methods: ['DELETE']
+
+api_project_list:
+  path: '/api/projects'
+  controller: 'App\Controller\ProjectController::index'
+  methods: ['GET']
+
+api_project_show:
+  path: '/api/projects/{id}'
+  controller: 'App\Controller\ProjectController::show'
+  methods: ['GET']
+
+api_project_create:
+  path: '/api/projects'
+  controller: 'App\Controller\ProjectController::create'
+  methods: ['POST']
+
+api_project_update:
+  path: '/api/projects/{id}'
+  controller: 'App\Controller\ProjectController::update'
+  methods: ['PUT']
+
+api_project_delete:
+  path: '/api/projects/{id}'
+  controller: 'App\Controller\ProjectController::delete'
+  methods: ['DELETE']
